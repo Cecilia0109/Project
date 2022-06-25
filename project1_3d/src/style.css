@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    font-family: 'Montserrat', 'sans-self';
+    /* background: linear-gradient(45deg, blue, red); */
+    /* linear-gradient: 渐变轴为45度，渐变色由第一个颜色到第二个颜色 */
+    background: linear-gradient(45deg,#f3eecf,#f9faf1);
+}
+
+.card, .front-face, .back-face{
+    position:absolute;
+}
+
+.card{
+    top: 50%;
+    left: 50%;
+    /* 之所以需要设置translate 是因为希望这个中心对齐（
+    本质上是沿着x轴移动50%，沿着y轴移动50% */
+    transform: translate(-50%,-50%);
+    height: 400px;
+    width: 320px;
+    /* 指示元素的子元素应位于 3D 空间中 */
+    transform-style: preserve-3d;
+    /*  当为元素定义 perspective 属性时，
+    其子元素会获得透视效果 
+    它允许您通过使 z 轴上较高的元素（
+    靠近观察者）显得更大，而远离的元素显得更小，从而为场景添加深度感。*/
+    /* 数值越大，场景深度感3d感越强 */
+    perspective: 1000px;
+}
+
+.card .front-face,
+.card .back-face{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background: url('src/image/front-face-bg.jpg');
+    background-size: cover;
+    background-position:center;
+    border-radius: 10px;
+    /* 指定当元素背面朝向观察者时是否可见。此处设置不可见 */
+    backface-visibility: hidden;
+    /* cubic-bezier 贝塞尔曲线 */
+    transition: transform .7s cubic-bezier(.4, .2, .2, 1);
+}
+
+.card .back-face{
+    /* 围绕纵坐标旋转180度 */
+    transform: rotateY(180deg);
+    background: url('/src/image/back-face-bg.jpg');
+    background-repeat: no-repeat;
+    /* cover 和contain 的区别：
+    cover 值尽可能大的缩放背景图像并保持图像的宽高比例（图像不会被压扁）。
+    该背景图以它的全部宽或者高覆盖所在容器。
+    当容器和背景图大小不同时，背景图的 左/右 或者 上/下 部分会被裁剪 
+     contain
+     缩放背景图片以完全装入背景区，可能背景区部分空白 */
+    background-size: cover;
+}
+
+.card .back-face h2{
+    margin-top: 40%;
+    color: #ffffff;
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+.card .back-face p{
+    margin-top: 6px;
+    color: #dddddd;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.card .back-face .icons{
+    margin-top: 30px;
+}
+.card .back-face .icons i{
+    cursor: pointer;
+    color: #d74039;
+    background: #ffffff;
+    width: 40px;
+    height: 40px;
+    /* 行高line -height = height 的时候，自动水平居中 */
+    line-height: 40px;
+    /* border-radiour 设置50% 则会变成圆 */
+    border-radius: 50%;
+    margin: 0 5px;
+
+}
+/*鼠标悬停在父类选择器上，改变子类选择器的用法 
+旋转常规用法，正背面一个rotate 0deg， 一个rotate -180deg */
+
+.card:hover > .back-face{
+    transform: rotateY(0deg);
+}
+
+.card:hover > .front-face{
+    transform: rotateY(-180deg);
+}

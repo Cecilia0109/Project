@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Src/style.css">
     <title>Chunyu cheongsam</title>
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
  <div class="ts-page-wrapper">
     <header>
+        <!--  -->
         <nav class="navbar">
             <div class="logo"></div>
             <ul>
@@ -19,14 +20,14 @@
                 <li><a href="#">Collections</a></li>
                 <li><a href="#">Real Bridals</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a class="btn" href="#">Reservation</a></li>
+                <li><a id="btn" href="#">Reservation</a></li>
             </ul>
         </nav>
         <div class="text">
             <H1>Chunyu Bridal</H1>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam, quae.</p>
            <div>
-            <a href="#" class="btn">Learn More</a>
+            <a href="#" id="btn">Learn More</a>
             <a href="#">Schedule Now</a>
            </div>
         </div>
@@ -38,35 +39,42 @@
         <section id="about me">
 
         </section>
+<!-- ---------------TODO:-----About Me end-------------- -->
         <section id="Collections">
-            <div class="container">
+            <div class="container collections">
+                <h2 class="ts-tittle">Collections</h2>
                 <div class="row">
-                    <div class="col-md-4">
-                        <img src="" alt="category1" class="card-img">
-                        <div class="cardbody">
-                            <h3>Category1</h3>
-                            <p>this is made by China</p>
+                    <div class="col-md-4 card " id="lookbook">
+                        <img src="/Src/image/lookbook/example1.jpg" class="card-img-top" alt="look-book1">
+                        <div class="card-body">
+                          <h5 class="card-title">look-book1</h5>
+                          <p class="card-text">more details</p>
+                          <a href="#" class="btn btn-primary" id="btn">Go somewhere</a>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <img src="" alt="category2" class="card-img">
-                        <div class="cardbody">
-                            <h3>Category2</h3>
-                            <p>this is made by China</p>
+                    <div class="col-md-4 card " id="lookbook">
+                        <img src="/Src/image/lookbook/example1.jpg" class="card-img-top" alt="look-book1">
+                        <div class="card-body">
+                          <h5 class="card-title">look-book1</h5>
+                          <p class="card-text">more details</p>
+                          <a href="#" class="btn btn-primary" id="btn">Go somewhere</a>
+                        </div>
                     </div>
-                    <div class="col-md-4">
-                        <img src="" alt="category3" class="card-img">
-                        <div class="cardbody">
-                            <h3>Category3</h3>
-                            <p>this is made by China</p>
+                    <div class="col-md-4 card " id="lookbook">
+                        <img src="/Src/image/lookbook/example1.jpg" class="card-img-top" alt="look-book1">
+                        <div class="card-body">
+                          <h5 class="card-title">look-book1</h5>
+                          <p class="card-text">more details</p>
+                          <a href="#" class="btn btn-primary" id="btn">Go somewhere</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
         </section>
         <!-- ---------------------------Collections end-------------------------- -->
-        <!-- note 这里使用瀑布流的展现方式，类似小红书，card 图片+文字的形式 -->
-        <!-- todo bootstrap 如何展示瀑布流 -->
+        <!-- TODO: 这里使用瀑布流的展现方式，类似小红书，card 图片+文字的形式 -->
+        <!-- TODO: bootstrap 如何展示瀑布流 -->
         <section id="Real Bridals">
             <div class="container">
                 <h2>Real Bridals</h2>
